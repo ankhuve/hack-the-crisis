@@ -1,14 +1,13 @@
 require('dotenv').config();
 
 module.exports = {
-    SEQUELIZE: {
-        development: {
-            username: process.env.DB_USERNAME,
-            password: process.env.DB_PASSWORD,
-            database: process.env.DB_DATABASE,
-            host: process.env.DB_HOST,
-            dialect: "mysql",
-            operatorsAliases: 0        
-        }
+    development: {
+        username: process.env.DB_USERNAME,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_DATABASE,
+        host: process.env.DB_HOST,
+        dialect: "mysql",
+        operatorsAliases: 0,
+        jwtSecret: process.env.JWT_SECRET || 'secret'
     }
 }
