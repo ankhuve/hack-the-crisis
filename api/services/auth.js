@@ -11,11 +11,12 @@ const AuthService = class AuthService {
 
     createUserAuthToken(userId, firstName, lastName) {
         return jwt.sign({
-            userClaims: {
+            claims: {
                 userId: userId,
                 firstName: firstName,
                 lastName: lastName
-            }
+            },
+            tokenType: 'auth'
         }, this.secretKey, {
             expiresIn: '7d',
             issuer: 'quarma.se',
