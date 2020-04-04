@@ -1,0 +1,20 @@
+$peek-height: 20vh;
+
+.sheet {
+    position: absolute;
+    bottom: calc(-100% - #{$base-space * 4});
+    height: 100vh;
+    background: $background;
+    padding: $base-space * 2;
+    border-top-left-radius: $base-space*6;
+    border-top-right-radius: $base-space*6;
+    width: calc(100% - (#{$base-space} * 4));
+    transform: translateY(-#{$peek-height});
+    transition: all $animation-duration--fast;
+    user-select: none;
+    @include elevation(16);
+
+    &--open {
+        transform: translateY(calc(-100% + #{$base-space} * 4));
+    }
+}

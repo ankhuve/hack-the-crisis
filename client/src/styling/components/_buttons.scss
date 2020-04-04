@@ -1,0 +1,34 @@
+button {
+    border: none;
+}
+
+.button {
+    border: none;
+    background: white;
+    border-radius: 8px;
+    font-size: $font-size--large;
+    font-weight: bold;
+    &--primary {
+        background: $primary;
+        color: $background;
+    }
+
+    &--secondary {
+        background: $secondary;
+        color: $background;
+    }
+
+    &--outline {
+        background: white;
+        border: 2px solid $primary;
+    }
+
+    &--big {
+        padding: 24px 96px;
+    }
+
+    &--medium {
+        padding: 16px 36px;
+    }
+    
+}

@@ -1,0 +1,38 @@
+@import '../../styling/resources.scss';
+
+.errand-row {
+    display: flex;
+    flex-direction: row;
+    padding: $base-space*2 0;
+    padding-left: $base-space * 3;
+    align-items: center;
+    &__image {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: $secondary--light;
+    }
+    &__texts {
+        text-align: left;
+        flex-grow: 2;
+        flex-direction: column;
+        padding-left: $base-space * 3;
+        &__name {
+            font-size: $font-size--large;
+            font-weight: bold;
+            color: $primary--dark;
+            margin-bottom: $base-space;
+        }
+        &__errand {
+            font-size: $font-size;
+            color: $primary--light;
+        }
+    }
+    &__distance{
+        flex-grow: 1;
+        text-align: left;
+        font-size: $font-size;
+        color: $primary--dark;
+        font-weight: bold;
+    }
+}
