@@ -1,0 +1,25 @@
+// colors
+$primary: #4973A6;
+$primary--dark: #3E4756;
+$primary--light: #A2ACBD;
+$secondary: #A35B70;
+$secondary--light: #DB8FA4;
+$secondary--dark: #77505B;
+$background: #F5F6F7;
+$background--dark: #e1e7ee;
+
+// spacing
+$base-space: 8px;
+
+// animations
+$animation-duration: 0.3s;
+$animation-duration--fast: 0.15s;
+$animation-duration--slow: 0.7s;
+
+// typography
+$font-size: 16px;
+$font-size--small: calc(#{$font-size} - #{$font-size} / 2);
+$font-size--large: calc(#{$font-size} + #{$font-size} / 2);
+$font-size--title: $font-size * 2;
+$font-weight: 400;
+$font-weight--bold: 700;

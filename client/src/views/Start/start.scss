@@ -1,0 +1,24 @@
+@import '../../styling/resources.scss';
+
+.Start {
+    display: flex;
+    flex-direction: column;
+
+    &__choice {
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color $animation-duration;
+
+        &:hover {
+            background: $background--dark;
+        }
+
+        &__title {
+            margin: 0;
+            font-weight: $font-weight--bold;
+            font-size: $font-size--title;
+        }
+    }
+}
