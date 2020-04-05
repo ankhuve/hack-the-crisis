@@ -1,6 +1,6 @@
-# Quarma API
+# Quaranteam API
 
-API providing the backend for the Quarma App.
+API providing the backend for the Quaranteam App.
 
 ## Local Setup
 
