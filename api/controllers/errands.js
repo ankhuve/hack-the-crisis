@@ -57,6 +57,32 @@ exports.assignErrand = function(req, res, next) {
     }).catch(next);
 }
 
+exports.deleteErrandAssignment = function(req, res, next) {
+    const errandId = req.params.id;
+    const helperId = req.user.claims.userId;
+
+    models.Errand.findOne({where: {id: errandId}}).then(errand => {
+        if (!errand) {
+            res.status(404);
+            res.json({'message': 'Failed to find errand with id ' + errandId});
+            return;
+        }
+
+        if (errand.helper !== helperId) {
+            res.status(400);
+            res.json({'message': 'You are not assigned to this errand'});
+            return;
+        }
+
+        errand.update({
+            helper: null
+        }).then(() => {
+            res.status(204);
+            res.send('');
+        })
+    }).catch(next);
+}
+
 exports.getCategories = function(req, res, next) {
     models.ErrandCategory.findAll().then(result => {
         res.json(result);

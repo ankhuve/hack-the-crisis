@@ -131,12 +131,20 @@ router.get('/:id', jwtRequired, checkSchema({
     }
 }), requestValidation.checkValidationResult, errandsController.getErrand);
 
-router.post('/:id/assign', jwtRequired, checkSchema({
+router.post('/:id/assignment', jwtRequired, checkSchema({
     id: {
         exists: {
             errorMessage: 'Missing errand id'
         }
     }
 }), requestValidation.checkValidationResult, errandsController.assignErrand);
+
+router.delete('/:id/assignment', jwtRequired, checkSchema({
+    id: {
+        exists: {
+            errorMessage: 'Missing errand id'
+        }
+    }
+}), requestValidation.checkValidationResult, errandsController.deleteErrandAssignment);
 
 module.exports = router;
