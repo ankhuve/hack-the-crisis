@@ -26,6 +26,12 @@ exports.getErrand = function(req, res, next) {
     getErrandById(errandId, req, res, next);
 }
 
+exports.getCategories = function(req, res, next) {
+    models.ErrandCategory.findAll().then(result => {
+        res.json(result);
+    })
+}
+
 exports.getErrands = function(req, res, next) {
     const unassigned = req.query.unassigned;
     const nearLocation = req.query.nearLocation;

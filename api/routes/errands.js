@@ -121,7 +121,7 @@ router.get('/', jwtRequired, checkSchema({
     }
 }), requestValidation.checkValidationResult, errandsController.getErrands);
 
-// router.post('/:id/assign', jwtRequired, errandsController.getErrand);
+router.get('/categories', errandsController.getCategories);
 
 router.get('/:id', jwtRequired, checkSchema({
     id: {
