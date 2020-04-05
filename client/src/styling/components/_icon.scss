@@ -1,0 +1,11 @@
+.icon {
+    height: 16px;
+    width: 16px;
+    display: inline-flex;
+    margin-right: $base-space;
+
+    &--checkbox {
+        background: url('../../assets/images/checkbox.svg') center center no-repeat;
+        background-size: contain;
+    }
+}

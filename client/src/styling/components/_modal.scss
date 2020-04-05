@@ -1,0 +1,40 @@
+.modal {
+    position: relative;
+    z-index: 10;
+
+    &__backdrop {
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        background: rgba(12, 15, 17, 0.6);
+    }
+
+    &__content {
+        position: fixed;
+        left: $base-space * 4;
+        top: 20vh;
+        background: white;
+        border-radius: 24px;
+        padding: $base-space * 3;
+        min-height: 300px;
+        width: calc(100% - #{$base-space} * 14);
+        z-index: 1;
+        text-align: left;
+        @include elevation(20);
+
+        p {
+            line-height: 1.4;
+        }
+
+        button {
+            position: absolute;
+            bottom: $base-space * 3;
+            width: calc(100% - #{$base-space} * 6);
+        }
+
+        &__title {
+            margin-top: 0;
+            font-size: $font-size--large;
+        }
+    }
+}

@@ -4,10 +4,11 @@
         flex-direction: column;
         text-align: left;
         margin-bottom: $base-space * 3;
+
         input {
             border-radius: $base-space / 2;
             border: 1px solid $primary--dark;
-            padding: $base-space*2 $base-space;
+            padding: $base-space $base-space*2;
         }
 
         textarea {
@@ -18,9 +19,9 @@
         }
 
         label {
-            font-size: $font-size--large;
+            font-size: $font-size;
             color: $primary--dark;
-            margin-bottom: $base-space * 2;
+            margin-bottom: $base-space;
             font-weight: bold;
         }
     }

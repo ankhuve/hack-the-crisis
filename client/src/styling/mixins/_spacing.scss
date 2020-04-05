@@ -1,0 +1,11 @@
+$max: 4;
+$offset: 1;
+@mixin generate-spacing-utility-classes($className, $styleName) {
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} { 
+      #{$styleName}: #{$i * $base-space};
+    }
+    $i: $i + $offset;
+  }
+}

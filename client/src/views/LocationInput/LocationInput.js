@@ -4,6 +4,7 @@ import './locationInput.scss'
 import Input from '../../components/Input/Input';
 import {searchForLocation} from '../../helpers/googleMaps';
 import SearchSuggestions from '../../components/SearchSuggestions/SearchSuggestions';
+import { Link } from 'react-router-dom';
 
 const LocationInput = () => {
     const [locationInput, setLocationInput] = useState('');
@@ -26,12 +27,15 @@ const LocationInput = () => {
         }
     }, [locationInput])
 
+    useEffect(() => {
+        console.log(searchSuggestions);
+    }, [searchSuggestions])
+
     const handleLocationInput = async (e) => {
         setLocationInput(e.target.value);
     }
 
     const handleClickedLocation = (location) => {
-        console.log(location);
         setClickedLocation(location.geometry.location);
         setLocationInput(location.formatted_address)
     }
@@ -46,15 +50,15 @@ const LocationInput = () => {
                 }
             </div>
             <div className="location-input__map">
-                <GoogleMap height={'392px'} width={'392px'} location={clickedLocation}/>
+                <GoogleMap height={'292px'} width={'292px'} location={clickedLocation}/>
             </div>
             <div className="location-input__buttons">
-                <div className="button--big button--secondary">
-                    Send it!
-                </div>
-                <div className="button--big button--outline ">
-                    Back
-                </div>
+                <Link to="/create-errand">
+                    <button className="button button--secondary button--big button--outline--secondary">Back</button>
+                </Link>
+                <Link to="/missions">
+                    <button className="button button--secondary button--big">Send it!</button>
+                </Link>
             </div>
         </div>
     )
