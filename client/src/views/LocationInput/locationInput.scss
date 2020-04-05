@@ -1,6 +1,22 @@
 @import '../../styling/resources.scss';
 
 .location-input {
-    height: 100%;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: $base-space * 6;
+    &__input {
+        position: relative;
+    }
+    &__map{
+        height: 400px;
+        width: 400px;
+        border: 4px solid $primary--dark;
+        border-radius: 5px;
+        align-self: center;
+        box-sizing: border-box;
+    }
+    &__buttons{
+        margin-top: $base-space*4;
+        flex-direction: row;
+    }
 }
