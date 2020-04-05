@@ -26,6 +26,37 @@ exports.getErrand = function(req, res, next) {
     getErrandById(errandId, req, res, next);
 }
 
+exports.assignErrand = function(req, res, next) {
+    const errandId = req.params.id;
+    const helperId = req.user.claims.userId;
+
+    models.Errand.findOne({where: {id: errandId}}).then(errand => {
+        if (!errand) {
+            res.status(404);
+            res.json({'message': 'Failed to find errand with id ' + errandId});
+            return;
+        }
+        
+        if (errand.requestedBy === helperId) {
+            res.status(400);
+            res.json({'message': 'Can\'t assign own errand'});
+            return;
+        }
+
+        if (errand.helper !== null) {
+            res.status(400);
+            res.json({'message': 'Errand already assigned'});
+            return;
+        }
+
+        errand.update({
+            helper: helperId
+        }).then(errand => {
+            getErrandById(errand.id, req, res, next);
+        })
+    }).catch(next);
+}
+
 exports.getCategories = function(req, res, next) {
     models.ErrandCategory.findAll().then(result => {
         res.json(result);

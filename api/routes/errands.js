@@ -131,6 +131,12 @@ router.get('/:id', jwtRequired, checkSchema({
     }
 }), requestValidation.checkValidationResult, errandsController.getErrand);
 
-
+router.post('/:id/assign', jwtRequired, checkSchema({
+    id: {
+        exists: {
+            errorMessage: 'Missing errand id'
+        }
+    }
+}), requestValidation.checkValidationResult, errandsController.assignErrand);
 
 module.exports = router;
