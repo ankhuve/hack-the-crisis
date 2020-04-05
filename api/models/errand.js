@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     freezeTableNames: true
   });
   Errand.associate = function(models) {
-    Errand.belongsTo(models.ErranCategory);
+    Errand.belongsTo(models.ErrandCategory);
   };
   return Errand;
 };
