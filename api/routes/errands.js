@@ -93,6 +93,36 @@ router.post('/', jwtRequired, checkSchema({
     },
 }), requestValidation.checkValidationResult, errandsController.createErrand);
 
+
+router.get('/', jwtRequired, checkSchema({
+    unassigned: {
+        optional: {},
+        isBoolean: {
+            errorMessage: 'Unassigned must be boolean value'
+        }
+    },
+    nearLocation: {
+        optional: {},
+        custom: {
+            options: (value, {req, location, path}) => {
+                const latLong = value.split(',');
+                if (latLong.length !== 2) {
+                    return false;
+                }
+                const latitude = parseFloat(latLong[0]);
+                const longitude = parseFloat(latLong[1]);
+
+                return true;
+            }
+        }
+    },
+    radius: {
+        optional: {}
+    }
+}), requestValidation.checkValidationResult, errandsController.getErrands);
+
+// router.post('/:id/assign', jwtRequired, errandsController.getErrand);
+
 router.get('/:id', jwtRequired, checkSchema({
     id: {
         exists: {
@@ -100,5 +130,7 @@ router.get('/:id', jwtRequired, checkSchema({
         }
     }
 }), requestValidation.checkValidationResult, errandsController.getErrand);
+
+
 
 module.exports = router;

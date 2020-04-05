@@ -21,6 +21,15 @@ module.exports = {
           hooks: true
         }
       },
+      helper: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'User',
+          key: 'id',
+          onDelete: 'SET NULL',
+          hooks: true
+        }
+      },
       categoryId: {
         type: Sequelize.INTEGER,
         references: {
