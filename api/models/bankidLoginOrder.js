@@ -1,10 +1,9 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-    const BankIdLoginOrder = sequelize.define('BankIdLoginOrder', {
+    const BankIdLoginOrder = sequelize.define('BankidLoginOrder', {
         orderRef: DataTypes.STRING
     }, {
-        freezeTableName: true,
-        tableName: 'bankid_login_order'
+        freezeTableName: true
     });
 
     BankIdLoginOrder.associate = function (models) {};

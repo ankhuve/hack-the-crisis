@@ -7,11 +7,12 @@ module.exports = (sequelize, DataTypes) => {
     latitude: DataTypes.FLOAT,
     longitude: DataTypes.FLOAT
   }, {
-    tableName: 'errand',
-    freezeTableNames: true
+    freezeTableName: true
   });
+
   Errand.associate = function(models) {
-    Errand.belongsTo(models.ErrandCategory);
+    Errand.belongsTo(models.ErrandCategory, {foreignKey: 'categoryId', as: 'category'});
+    Errand.belongsTo(models.User, {foreignKey: 'requestedBy', as: 'user'});
   };
   return Errand;
 };

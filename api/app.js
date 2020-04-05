@@ -9,6 +9,7 @@ const swaggerUi = require('swagger-ui-express');
 const pingRouter = require('./routes/ping');
 const usersRouter = require('./routes/users');
 const bankIdAuthRouter = require('./routes/auth/bankid');
+const errandsRouter = require('./routes/errands');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/ping', pingRouter);
 app.use('/users', usersRouter);
 app.use('/auth/bankid', bankIdAuthRouter);
+app.use('/errands', errandsRouter);
 
 
 const swaggerDefinition = {

@@ -15,9 +15,6 @@ const requestValidation = require('../../middlewares/requestValidation');
  * @swagger
  * definitions:
  *   bankIdLoginOrder:
- *     required:
- *       - username
- *       - password
  *     properties:
  *       orderRef:
  *         type: string

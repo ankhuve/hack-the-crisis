@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('bankid_login_order', {
+    return queryInterface.createTable('BankidLoginOrder', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -26,6 +26,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('bankid_login_order');
+    return queryInterface.dropTable('BankidLoginOrder');
   }
 };

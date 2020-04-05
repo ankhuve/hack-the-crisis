@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('errand', {
+    return queryInterface.createTable('Errand', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -15,7 +15,7 @@ module.exports = {
       requestedBy: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'user',
+          model: 'User',
           key: 'id',
           onDelete: 'CASCADE',
           hooks: true
@@ -24,7 +24,7 @@ module.exports = {
       categoryId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'errand_category',
+          model: 'ErrandCategory',
           key: 'id',
           onDelete: 'SET NULL',
           hooks: true
@@ -49,6 +49,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('errand');
+    return queryInterface.dropTable('Errand');
   }
 };

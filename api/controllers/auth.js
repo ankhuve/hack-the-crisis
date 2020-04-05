@@ -9,7 +9,7 @@ exports.initBankIdLogin = async function(req, res, next) {
     const bankIdInitResponse = await bankIdClient.init(pnr);
     const orderRef = bankIdInitResponse.orderRef;
 
-    models.BankIdLoginOrder.create({
+    models.BankidLoginOrder.create({
         orderRef: orderRef
     }).then(() => {
         res.json({

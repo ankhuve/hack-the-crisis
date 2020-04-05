@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('errand_category', [{
+    return queryInterface.bulkInsert('ErrandCategory', [{
         displayName: 'Övrigt',
         severity: 1
       },
@@ -16,6 +16,6 @@ module.exports = {
     ], {});
   },
     down: (queryInterface, Sequelize) => {
-      return queryInterface.bulkDelete('errand_category', null, {});
+      return queryInterface.bulkDelete('ErrandCategory', null, {});
     }
 };

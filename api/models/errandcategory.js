@@ -4,11 +4,12 @@ module.exports = (sequelize, DataTypes) => {
     displayName: DataTypes.STRING,
     severity: DataTypes.INTEGER
   }, {
-    tableName: 'errand_category',
     freezeTableName: true
   });
+
   ErrandCategory.associate = function(models) {
-    ErrandCategory.hasMany(models.Errand);
+    // ErrandCategory.hasMany(models.Errand);
   };
+
   return ErrandCategory;
 };
