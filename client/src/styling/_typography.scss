@@ -1,8 +1,18 @@
 h1, h2, h3, h4, h5 {
     color: $primary;
     margin-bottom: $base-space;
+    font-weight: $font-weight--bold;
+    color: black;
 }
 
 body {
     color: black;
+}
+
+label {
+    text-transform: uppercase;
+    font-size: $font-size--small;
+    color: $primary--light;
+    font-weight: $font-weight--bold;
+    text-align: left;
 }

@@ -1,10 +1,12 @@
 import React from 'react';
 import './errandRow.scss'
 
-const ErrandRow = ({name, distance}) => {
+const ErrandRow = ({name, distance, unit = 'm', avatarSrc, onClick}) => {
     return(
-        <div className="errand-row">
-            <div className="errand-row__image"></div>
+        <div className="errand-row" onClick={onClick}>
+            <div className="errand-row__image avatar">
+                { avatarSrc && <img src={avatarSrc} /> } 
+            </div>
             <div className="errand-row__texts">
                 <div className="errand-row__texts__name">
                     {name}
@@ -13,7 +15,7 @@ const ErrandRow = ({name, distance}) => {
                     Groceries
                 </div>
             </div>
-            <div className="errand-row__distance">{`${distance}m`}</div>
+            <div className="errand-row__distance">{`${distance}${unit}`}</div>
         </div>
     )
 }

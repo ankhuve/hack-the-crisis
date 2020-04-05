@@ -3,8 +3,7 @@
 .errand-row {
     display: flex;
     flex-direction: row;
-    padding: $base-space*2 0;
-    padding-left: $base-space * 3;
+    padding: $base-space * 2 0;
     align-items: center;
     &__image {
         width: 50px;
@@ -30,9 +29,8 @@
     }
     &__distance{
         flex-grow: 1;
-        text-align: left;
+        text-align: right;
         font-size: $font-size;
         color: $primary--dark;
-        font-weight: bold;
     }
 }

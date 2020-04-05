@@ -5,7 +5,8 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
-
+const cors = require('cors');
+const mapsRouter = require('./routes/maps');
 const pingRouter = require('./routes/ping');
 const usersRouter = require('./routes/users');
 const bankIdAuthRouter = require('./routes/auth/bankid');
@@ -14,6 +15,7 @@ const errandsRouter = require('./routes/errands');
 const app = express();
 
 app.use(logger('dev'));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -23,6 +25,7 @@ app.use('/ping', pingRouter);
 app.use('/users', usersRouter);
 app.use('/auth/bankid', bankIdAuthRouter);
 app.use('/errands', errandsRouter);
+app.use('/maps', mapsRouter);
 
 
 const swaggerDefinition = {
@@ -60,7 +63,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.json({message: 'Something went wront'});
+  res.json({message: 'Something went wrong'});
 });
 
 module.exports = app;

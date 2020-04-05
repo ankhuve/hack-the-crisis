@@ -2,7 +2,6 @@ import React from 'react';
 import './searchSuggestions.scss';
 
 const SearchSuggestions = ({searchSuggestions, handleOnClick}) => {
-    console.log(searchSuggestions)
     return(
         <div className='search-suggestions'>
             {searchSuggestions.map((suggestion) => {

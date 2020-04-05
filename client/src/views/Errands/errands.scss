@@ -25,4 +25,14 @@
             transform: translateX(-50%) translateY(-50%);
         }
     }
+
+    &__categories {
+        display: flex;
+        padding: $base-space 0 $base-space * 3;
+        max-width: 110%;
+        overflow-x: auto;
+        & > .button {
+            margin-right: $base-space;
+        }
+    }
 }

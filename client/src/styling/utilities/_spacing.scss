@@ -1,0 +1,11 @@
+// generate classes such as .m-a-0 through .m-a-4 where .m-a-4 means "margin all 4 * $base-space"
+@include generate-spacing-utility-classes('.p-l-', 'padding-left');
+@include generate-spacing-utility-classes('.p-r-', 'padding-right');
+@include generate-spacing-utility-classes('.p-a-', 'padding');
+@include generate-spacing-utility-classes('.p-t-', 'padding-top');
+@include generate-spacing-utility-classes('.p-b-', 'padding-bottom');
+@include generate-spacing-utility-classes('.m-l-', 'margin-left');
+@include generate-spacing-utility-classes('.m-r-', 'margin-right');
+@include generate-spacing-utility-classes('.m-a-', 'margin');
+@include generate-spacing-utility-classes('.m-t-', 'margin-top');
+@include generate-spacing-utility-classes('.m-b-', 'margin-bottom');

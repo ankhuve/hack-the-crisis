@@ -1,5 +1,17 @@
 @import '../../styling/resources.scss';
 
 .signup {
-    padding: $base-space * 6;
+    padding: 0 $base-space * 2;
+    text-align: left;
+
+    .avatar {
+        display: flex;
+        justify-content: center;
+    }
+
+    .button--primary {
+        position: fixed;
+        bottom: $base-space * 2;
+        width: calc(100% - #{$base-space} * 4);
+    }
 }

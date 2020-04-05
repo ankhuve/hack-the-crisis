@@ -1,4 +1,4 @@
-@import '../../styling/resources.scss';
+@import "../../styling/resources.scss";
 
 .Start {
     display: flex;
@@ -9,16 +9,25 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        background: $primary;
         transition: background-color $animation-duration;
 
-        &:hover {
-            background: $background--dark;
+        a {
+            text-decoration: none;
         }
 
         &__title {
             margin: 0;
             font-weight: $font-weight--bold;
             font-size: $font-size--title;
+        }
+
+        &--secondary {
+            background: $secondary;
+        }
+
+        .button {
+            width: calc(100% - #{$base-space * 4});
         }
     }
 }
