@@ -29,11 +29,18 @@ const requestValidation = require('../../middlewares/requestValidation');
  *   post:
  *     tags: [BankID]
  *     description: Init BankID login
+ *     consumes:
+ *       - application/json
  *     parameters:
- *       - name: pnr
- *         description: Swedish personal number (12 digits)
- *         required: true
- *         type: string
+ *       - in: body
+ *         schema:
+ *           type: object
+ *           required:
+ *             - pnr
+ *           properties:
+ *             pnr:
+ *               type: string
+ *               description: Swedish personal number (12 digits)
  *     responses:
  *       200:
  *         description: orderRef

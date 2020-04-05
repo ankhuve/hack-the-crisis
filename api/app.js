@@ -24,6 +24,7 @@ app.use('/auth/bankid', bankIdAuthRouter);
 
 
 const swaggerDefinition = {
+  swagger: '2.0',
   info: {
     title: 'Hack the Crisis',
     version: '1.0.0'
