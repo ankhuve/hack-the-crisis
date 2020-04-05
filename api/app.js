@@ -3,6 +3,9 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const swaggerJSDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+
 const pingRouter = require('./routes/ping');
 const usersRouter = require('./routes/users');
 const bankIdAuthRouter = require('./routes/auth/bankid');
@@ -18,6 +21,28 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/ping', pingRouter);
 app.use('/users', usersRouter);
 app.use('/auth/bankid', bankIdAuthRouter);
+
+
+const swaggerDefinition = {
+  info: {
+    title: 'Hack the Crisis',
+    version: '1.0.0'
+  }
+}
+
+const swaggerDocOptions = {
+  swaggerDefinition,
+  apis: ['./routes/**/*.js']
+}
+
+const swaggerSpec = swaggerJSDoc(swaggerDocOptions);
+
+app.get('/api-docs.json', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.send(swaggerSpec);
+});
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
