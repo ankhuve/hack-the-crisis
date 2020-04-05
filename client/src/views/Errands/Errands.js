@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import GoogleMap from '../../components/GoogleMap/GoogleMap';
 import "./errands.scss";
 import ErrandRow from "../../components/ErrandRow/ErrandRow";
+import SettingsButton from "../../components/SettingsButton/SettingsButton";
 
 const Errands = () => {
     const [errands, setErrands] = useState([
@@ -77,6 +78,7 @@ const Errands = () => {
 
     return (
         <div className="Errands">
+            <SettingsButton />
             <GoogleMap className="Errands__map"></GoogleMap>
             {/* <div className="Errands__map__dot"></div> */}
             <div className={`sheet ${listOpen ? 'sheet--open' : ''}`} 
@@ -86,9 +88,6 @@ const Errands = () => {
                 onMouseUp={e => onDragEnd(e)}
             >
                 {errands.map((errand) => (
-                    // <div key={errand.id} style={{height: '48px', borderBottom: '1px solid lightgrey'}}>
-                    //     {errand.user.name}
-                    // </div>
                     <ErrandRow name={errand.user.name} distance={250} />
                 ))}
             </div>

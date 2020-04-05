@@ -1,0 +1,25 @@
+@import '../../styling/resources.scss';
+
+.settings-button {
+    position: absolute;
+    top: $base-space * 2;
+    left: $base-space * 2;
+    height: $base-space * 8;
+    width: $base-space * 8;
+    border-radius: $base-space * 4;
+    background-color: $background;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+    &__icon {
+        height: $base-space * 3;
+        width: $base-space * 3;
+        background: url('../../assets/images/settings.png') center center no-repeat;
+        background-size: cover;
+    }
+    &--pressed {
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    }
+}
