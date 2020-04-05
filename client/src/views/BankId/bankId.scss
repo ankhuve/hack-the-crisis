@@ -1,0 +1,21 @@
+@import '../../styling/resources.scss';
+
+.bank-id {
+    padding-top: $base-space * 28;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__title{
+        font-size: 48px;
+        font-weight: bold;
+        color: $primary--dark;
+        margin-bottom: $base-space * 2
+    }
+    &__subtitle{
+        font-weight: normal;
+        margin-bottom: $base-space * 6;
+    }
+    .button {
+        width: calc(100% - #{$base-space * 14});
+    }
+}

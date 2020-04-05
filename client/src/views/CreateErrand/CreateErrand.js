@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Input from '../../components/Input/Input'
+import { Link } from "react-router-dom";
 import './createErrand.scss'
 
 const CreateErrand = () => {
@@ -24,10 +25,12 @@ const CreateErrand = () => {
 
     return ( 
         <div className="create-errand">
-            <Input name="name" value={formInfo.name} handleInput={handleTextInput} label="name" />
-            <Input name="phone" value={formInfo.phone} handleInput={handleTextInput} label="phone" />
-            <Input name="errand" value={formInfo.errand} handleInput={handleTextInput} label="errand" textarea />
-            <button className="button button--secondary button--big" onClick={handleSubmit}>Go!</button>
+            <Input placeholder="Göran Göransson" name="name" value={formInfo.name} handleInput={handleTextInput} label="name" />
+            <Input placeholder="+46 70 1234 567" name="phone" value={formInfo.phone} handleInput={handleTextInput} label="phone" />
+            <Input placeholder="What do you what help with?" name="errand" value={formInfo.errand} handleInput={handleTextInput} label="errand" textarea />
+            <Link to="/input-location">
+                <button className="button button--secondary button--big">Go!</button>
+            </Link>
         </div>
     )
 }

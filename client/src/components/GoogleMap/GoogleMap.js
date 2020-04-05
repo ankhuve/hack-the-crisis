@@ -58,7 +58,7 @@ const GoogleMap = ({ google, height, width, location }) => {
                     disableDefaultUI
                     onClick={handleMapClick}
                 >
-                    {/* {markerLocation && <Marker position={{ lat: markerLocation.lat, lng: markerLocation.lng }} />} */}
+                    {markerLocation && <Marker position={{ lat: markerLocation.lat, lng: markerLocation.lng }} />}
                     <Marker name={'Current location'} position={{ lat: currentLocation.lat, lng: currentLocation.lng }} />
                 </Map>
             )}

@@ -1,17 +1,18 @@
-$peek-height: 20vh;
+$peek-height: 200px;
 
 .sheet {
     position: absolute;
     bottom: calc(-100% - #{$base-space * 4});
     height: 100vh;
     background: $background;
-    padding: $base-space * 2;
-    border-top-left-radius: $base-space*6;
-    border-top-right-radius: $base-space*6;
-    width: calc(100% - (#{$base-space} * 4));
+    padding: $base-space * 2 $base-space * 3;
+    border-top-left-radius: $base-space*2;
+    border-top-right-radius: $base-space*2;
+    width: calc(100% - (#{$base-space} * 6));
     transform: translateY(-#{$peek-height});
     transition: all $animation-duration--fast;
     user-select: none;
+    z-index: 1;
     @include elevation(16);
 
     &--open {

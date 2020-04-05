@@ -4,10 +4,19 @@ button {
 
 .button {
     border: none;
+    text-decoration: none;
     background: white;
     border-radius: 8px;
     font-size: $font-size--large;
     font-weight: bold;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+
+    &[disabled] {
+        opacity: 0.7;
+    }
+
     &--primary {
         background: $primary;
         color: $background;
@@ -16,6 +25,11 @@ button {
     &--secondary {
         background: $secondary;
         color: $background;
+
+        &--faded {
+            background: $secondary--light;
+            color: #844A5B;
+        }
     }
 
     &--outline {
@@ -23,12 +37,32 @@ button {
         border: 2px solid $primary;
     }
 
+    &--outline--secondary {
+        border: 2px solid $secondary;
+        background-color: transparent;
+        color: $secondary
+    }
+
+
     &--big {
-        padding: 24px 96px;
+        padding: $base-space * 3;
     }
 
     &--medium {
-        padding: 16px 36px;
+        padding: $base-space * 2;
+    }
+
+    &--small {
+        padding: $base-space * 1.5 $base-space * 2;
+        font-size: $font-size;
+        font-weight: $font-weight;
+    }
+
+    &--round {
+        border-radius: 24px;
     }
     
+    a & {
+        text-decoration: none;
+    }
 }
